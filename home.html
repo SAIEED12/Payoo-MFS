@@ -78,15 +78,15 @@
           <img src="./assets/opt-2.png" alt="" />
           <p>Cashout</p>
         </button>
-        <button class="btn flex-col h-full py-4 btn-primary btn-soft">
+        <button onclick="showOnly('transfer-money')" class="btn flex-col h-full py-4 btn-primary btn-soft">
           <img src="./assets/opt-3.png" alt="" />
           <p>Transfer Money</p>
         </button>
-        <button class="btn flex-col h-full py-4 btn-primary btn-soft">
+        <button onclick="showOnly('get-bonus')" class="btn flex-col h-full py-4 btn-primary btn-soft">
           <img src="./assets/opt-4.png" alt="" />
           <p>Get Bonus</p>
         </button>
-        <button class="btn flex-col h-full py-4 btn-primary btn-soft">
+        <button onclick="showOnly('pay-bill')"  class="btn flex-col h-full py-4 btn-primary btn-soft">
           <img src="./assets/opt-5.png" alt="" />
           <p>Pay Bill</p>
         </button>
@@ -206,14 +206,14 @@
     </section>
 
     <!-- Transfer Money -->
-    <section id="transfer" class="w-11/12 mx-auto py-5">
+    <section id="transfer-money" class="w-11/12 mx-auto py-5">
       <h2 class="text-xl font-bold mb-5">Transfer Money</h2>
       <div class="card bg-base-100 w-full shadow mx-auto rounded-2xl">
         <div class="card-body">
           <fieldset class="fieldset">
             <label class="label text-neutral font-bold">User Account Number</label>
             <input
-              id="cashout-number"
+              id="user-account-number"
               type="text"
               class="input rounded-full bg-base-200 w-full"
               placeholder="Enter 11 digit number"
@@ -223,7 +223,7 @@
 
             <label class="label text-neutral font-bold">Amount</label>
             <input
-              id="cashout-amount"
+              id="transfer-amount"
               type="number"
               class="input rounded-full bg-base-200 w-full"
               placeholder="Enter amount to transfer"
@@ -233,7 +233,7 @@
 
             <label class="label text-neutral font-bold">Pin Number</label>
             <input
-              id="cashout-pin"
+              id="transfer-pin"
               type="password"
               maxlength="4"
               class="input rounded-full bg-base-200 w-full"
@@ -248,9 +248,85 @@
       </div>
     </section>
 
+    <!-- Get Bonus -->
+     <section id="get-bonus" class="w-11/12 mx-auto py-5">
+      <h2 class="text-xl font-bold mb-5">Get Bonus</h2>
+      <div class="card bg-base-100 w-full shadow mx-auto rounded-2xl">
+        <div class="card-body">
+          <fieldset class="fieldset">
+            <label class="label text-neutral font-bold">Enter Bonus Coupon</label>
+            <input
+              id="bonus-coupon"
+              type="text"
+              class="input rounded-full bg-base-200 w-full"
+              placeholder="Enter your coupon"/>
+              <button id="coupon-btn" class="btn btn-primary mt-4 rounded-full">
+              Get Bonus
+            </button>
+        </div>
+     </section>
+
+     <!-- Pay Bill -->
+    <section id="pay-bill" class="w-11/12 mx-auto py-5">
+      <h2 class="text-xl font-bold mb-5">Pay Bill</h2>
+      <div class="card bg-base-100 w-full shadow mx-auto rounded-2xl">
+        <div class="card-body">
+          <fieldset class="fieldset">
+
+            <label class="label text-neutral font-bold">Select To Pay</label>
+            <select id="select-bill" class="select w-full bg-base-200 rounded-full">
+              <option disabled selected>Select Bill</option>
+              <option value="Electricity Bill">Electricity Bill</option>
+              <option value="Gas Bill">Gas Bill</option>
+              <option value="WASA">WASA</option>
+              <option value="Mobile Recharge">Mobile Recharge</option>
+            </select>
+
+            <br>
+
+            <label class="label text-neutral font-bold">Biller Account Number</label>
+            <input
+              id="biller-account-number"
+              type="text"
+              class="input rounded-full bg-base-200 w-full"
+              value="01234567890"
+              placeholder="Enter account number"
+            />
+
+            <br />
+
+            <label class="label text-neutral font-bold">Amount to Pay</label>
+            <input
+              id="bill-amount"
+              type="number"
+              class="input rounded-full bg-base-200 w-full"
+              placeholder="Amount to Pay"
+            />
+
+            <br />
+
+            <label class="label text-neutral font-bold">Pin Number</label>
+            <input
+              id="bill-pin"
+              type="password"
+              maxlength="4"
+              class="input rounded-full bg-base-200 w-full"
+              placeholder="Enter 4 digit pin number"
+            />
+            <div></div>
+            <button id="pay-btn" class="btn btn-primary mt-4 rounded-full">
+              Pay Now
+            </button>
+          </fieldset>
+        </div>
+      </div>
+    </section>
+
     <script src="./script/machine.js"></script>
     <script src="./script/addMoney.js"></script>
     <script src="./script/cashout.js"></script>
     <script src="./script/transferMoney.js"></script>
+    <script src="./script/getBonus.js"></script>
+    <script src="./script/payBill.js"></script>
   </body>
 </html>

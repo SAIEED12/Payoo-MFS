@@ -2,7 +2,7 @@ document.getElementById("cashout-btn").addEventListener('click', function(){
     // 1. Get the agent number & validate
     const cashoutNumber = getValueFromInput("cashout-number");
     if(cashoutNumber.length != 11){
-        alert("Invalid Number");
+        alert("Invalid Number!");
         return;
     }
 
@@ -15,7 +15,7 @@ document.getElementById("cashout-btn").addEventListener('click', function(){
     // 4. Calculate new balance
     const newBalance = currentBalance - Number(cashoutAmount);
     if(newBalance < 0){
-        alert("Invalid Amount");
+        alert("Invalid Amount!");
         return;    
     }
 
@@ -35,7 +35,7 @@ document.getElementById("cashout-btn").addEventListener('click', function(){
         // 3. new div e innerHTML addd korbo
         newHistory.innerHTML = `
         <div class="transaction-card p-5 bg-base-100">
-          Cashout TK${cashoutAmount} Success to ${cashoutNumber}, at ${new Date()}
+          Cashout Tk${cashoutAmount} at ${new Date()}
         </div>
         `;
 
@@ -44,7 +44,7 @@ document.getElementById("cashout-btn").addEventListener('click', function(){
     }
     else{
         // 5-2 false:: show an error alert > return
-        alert("Invalid Pin")
+        alert("Invalid Pin!")
         return;
     }
 });
